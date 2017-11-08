@@ -14,9 +14,11 @@ public class PizzaService {
     }
 
     public void makeCall(String city){
-        parseJsonData(HttpUtils.makeHttpRequest(Confing.URL_ID + city + "&key=" + Confing.API_ID));
+       HttpUtils.makeHttpRequest(Confing.URL_ID + "Cracow" + "&key=" + Confing.API_ID);
     }
+
 private void parseJsonData(String text){
+
 
 }
 
