@@ -27,9 +27,7 @@ public class MainController implements Initializable, PizzaObserver {
     private PizzaService pizzaService = PizzaService.getService();
 
     public void initialize(URL location, ResourceBundle resources) {
-        buttonShow.setOnMouseClicked(e ->
-                showPizza()
-        );
+        buttonShow.setOnMouseClicked(e -> showPizza());
         pizzaService.registerObserver(this);
 
     }
@@ -41,7 +39,8 @@ public class MainController implements Initializable, PizzaObserver {
     @Override
     public void onPizzaObserver(PizzaData data) {
 
-        labelPizza.setText("Najlepsza pizza w mieście  " + data.getPizzaName() );
+        labelPizza.setText("Najlepsza pizza w mieście  "  + data.getPizzaName()+ '\n'
+       + "Jej adres to: " + data.getPizzaAdres());
 
     }
 

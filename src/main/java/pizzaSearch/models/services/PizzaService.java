@@ -40,7 +40,7 @@ parseJsonData(HttpUtils.makeHttpRequest(Confing.URL_ID + city + "&key=" + Confin
 
 private void parseJsonData(String text){
     JSONObject root = new JSONObject(text);
-    JSONArray main = root.getJSONArray("main");
+    JSONArray main = root.getJSONArray("results");
 float note = 0;
 float maxnote = 0;
     JSONObject pizzerias;
@@ -58,8 +58,7 @@ float maxnote = 0;
             maxnote = note;
             pizzaAdres = pizzerias.getString("formatted_address");
             pizzaName = pizzerias.getString("name");
-            System.out.println("Adres pizzerii to: " + pizzaAdres);
-            System.out.println("Nazwa pizzerii to: " + pizzaName);
+
         }
 
     }
@@ -68,7 +67,7 @@ float maxnote = 0;
     pizzaData.setPizzaAdres(pizzaAdres);
     pizzaData.setPizzaNote(maxnote);
     notifyObservers(pizzaData);
-    System.out.println(note);
+
 
 
 
