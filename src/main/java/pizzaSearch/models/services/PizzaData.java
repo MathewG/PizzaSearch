@@ -5,10 +5,8 @@ public class PizzaData {
     private String pizzaAdres;
     private String pizzaName;
 
-    public PizzaData(float pizzaNote, String pizzaAdres, String pizzaName) {
-        this.pizzaNote = pizzaNote;
-        this.pizzaAdres = pizzaAdres;
-        this.pizzaName = pizzaName;
+    public PizzaData() {
+
     }
 
     public float getPizzaNote() {
@@ -33,5 +31,14 @@ public class PizzaData {
 
     public void setPizzaName(String pizzaName) {
         this.pizzaName = pizzaName;
+    }
+
+    @Override
+    public String toString() {
+        return "PizzaData{" +
+                "pizzaNote=" + pizzaNote +
+                ", pizzaAdres='" + pizzaAdres + '\'' +
+                ", pizzaName='" + pizzaName + '\'' +
+                '}';
     }
 }

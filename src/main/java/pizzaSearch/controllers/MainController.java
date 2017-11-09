@@ -32,4 +32,6 @@ public class MainController implements Initializable, PizzaObserver{
     public void PizzaObserver(PizzaData data) {
 
     }
+PizzaData pizzaData = new PizzaData();
+
 }
