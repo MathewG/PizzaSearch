@@ -39,7 +39,8 @@ public class MainController implements Initializable, PizzaObserver {
 
     @Override
     public void onPizzaObserver(PizzaData data) {
-        
+
 
     }
+
 }
