@@ -62,7 +62,7 @@ float maxnote = 0;
         }
 
     }
-    PizzaData pizzaData = new PizzaData(pizzaName,pizzaAdres,maxnote);
+    PizzaData pizzaData = new PizzaData();
     pizzaData.setPizzaName(pizzaName);
     pizzaData.setPizzaAdres(pizzaAdres);
     pizzaData.setPizzaNote(maxnote);
