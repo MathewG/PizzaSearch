@@ -17,7 +17,7 @@ public class PizzaService {
 
     private List<PizzaObserver> observers;
 
-    private PizzaService() {
+    public PizzaService() {
         observers = new ArrayList<>();
     }
 
@@ -33,8 +33,9 @@ public class PizzaService {
 
 
     public void makeCall(String city){
-       //HttpUtils.makeHttpRequest(Confing.URL_ID + "Cracow" + "&key=" + Confing.API_ID); //aby wywołać JSONa należy wywołać tę metodę (utworzyć obiekt tej klasy i odpalić w nim tę metodę)
+  //  HttpUtils.makeHttpRequest(Confing.URL_ID + "Cracow" + "&key=" + Confing.API_ID); //aby wywołać JSONa należy wywołać tę metodę (utworzyć obiekt tej klasy i odpalić w nim tę metodę)
 parseJsonData(HttpUtils.makeHttpRequest(Confing.URL_ID + city + "&key=" + Confing.API_ID));
+
     }
 
 private void parseJsonData(String text){
@@ -57,6 +58,8 @@ float maxnote = 0;
             maxnote = note;
             pizzaAdres = pizzerias.getString("formatted_address");
             pizzaName = pizzerias.getString("name");
+            System.out.println(pizzaAdres);
+            System.out.println(pizzaName);
         }
 
     }

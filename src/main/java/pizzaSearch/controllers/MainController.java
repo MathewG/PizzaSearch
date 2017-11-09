@@ -28,19 +28,21 @@ public class MainController implements Initializable, PizzaObserver {
 
     public void initialize(URL location, ResourceBundle resources) {
         pizzaService.registerObserver(this);
-        buttonShow.setOnMouseClicked(e ->
-                showPizza()
-        );
+    //    buttonShow.setOnMouseClicked(e ->
+   //             showPizza()
+    //    );
     }
 
-    private void showPizza() {
-        pizzaService.makeCall(textCity.getText());
-    }
+  //  private void showPizza() {
+  //      pizzaService.makeCall(textCity.getText());
+  //  }
 
     @Override
     public void onPizzaObserver(PizzaData data) {
 
+        labelPizza.setText("Najlepsza pizza w mieście  " + data.getPizzaName() );
 
     }
+
 
 }
