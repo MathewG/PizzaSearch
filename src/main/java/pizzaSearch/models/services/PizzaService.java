@@ -66,6 +66,8 @@ PizzaData pizzaData = new PizzaData();
     pizzaData.setPizzaNote(maxnote);
 notifyObservers(pizzaData);
 
+dupa
+
 
 
 }
