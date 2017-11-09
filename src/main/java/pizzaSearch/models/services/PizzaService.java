@@ -6,7 +6,7 @@ import pizzaSearch.models.utils.HttpUtils;
 public class PizzaService {
     private static PizzaService ourInstance = new PizzaService();
 
-    public static PizzaService getInstance() {
+    public static PizzaService getService() {
         return ourInstance;
     }
 
