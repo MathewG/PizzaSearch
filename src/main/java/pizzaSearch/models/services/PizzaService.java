@@ -58,17 +58,17 @@ float maxnote = 0;
             maxnote = note;
             pizzaAdres = pizzerias.getString("formatted_address");
             pizzaName = pizzerias.getString("name");
-            System.out.println(pizzaAdres);
-            System.out.println(pizzaName);
+            System.out.println("Adres pizzerii to: " + pizzaAdres);
+            System.out.println("Nazwa pizzerii to: " + pizzaName);
         }
 
     }
-PizzaData pizzaData = new PizzaData();
+    PizzaData pizzaData = new PizzaData(pizzaName,pizzaAdres,maxnote);
     pizzaData.setPizzaName(pizzaName);
     pizzaData.setPizzaAdres(pizzaAdres);
     pizzaData.setPizzaNote(maxnote);
-notifyObservers(pizzaData);
-
+    notifyObservers(pizzaData);
+    System.out.println(note);
 
 
 

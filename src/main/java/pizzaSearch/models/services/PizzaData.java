@@ -5,8 +5,10 @@ public class PizzaData {
     private String pizzaAdres;
     private String pizzaName;
 
-    public PizzaData() {
-
+    public PizzaData(String pizzaName, String pizzaAdres, float pizzaNote) {
+        this.pizzaAdres = pizzaAdres;
+        this.pizzaNote = pizzaNote;
+        this.pizzaName = pizzaName;
     }
 
     public float getPizzaNote() {
