@@ -2,9 +2,7 @@ package pizzaSearch.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import pizzaSearch.models.services.PizzaData;
 import pizzaSearch.models.services.PizzaObserver;
 import pizzaSearch.models.services.PizzaService;
@@ -24,23 +22,32 @@ public class MainController implements Initializable, PizzaObserver {
     @FXML
     Button buttonShow;
 
+    @FXML
+
+    ListView ListViewChoose;
+
     private PizzaService pizzaService = PizzaService.getService();
 
     public void initialize(URL location, ResourceBundle resources) {
         buttonShow.setOnMouseClicked(e -> showPizza());
         pizzaService.registerObserver(this);
+        ListViewChoose.getItems().addAll("Pizzeria", "Bar","Restauracja", "Kawiarnia");
+        ListViewChoose.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
     }
 
     private void showPizza() {
-        pizzaService.makeCall(textCity.getText());
+        String choosen = (String)ListViewChoose.getSelectionModel().getSelectedItem();
+        pizzaService.makeCall(textCity.getText(),choosen);
     }
+
+
 
     @Override
     public void onPizzaObserver(PizzaData data) {
 
-        labelPizza.setText("Najlepsza pizza w mieście  "  + data.getPizzaName()+ '\n'
-       + "Jej adres to: " + data.getPizzaAdres());
+        labelPizza.setText("Powinieneś wybrać się do:  "  + data.getPizzaName()+ '\n'
+       + "Pod adres: " + data.getPizzaAdres());
 
     }
 

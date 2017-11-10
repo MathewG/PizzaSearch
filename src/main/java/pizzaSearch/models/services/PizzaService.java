@@ -32,9 +32,9 @@ public class PizzaService {
     }
 
 
-    public void makeCall(String city){
+    public void makeCall(String city, String choosen){
   //  HttpUtils.makeHttpRequest(Confing.URL_ID + "Cracow" + "&key=" + Confing.API_ID); //aby wywołać JSONa należy wywołać tę metodę (utworzyć obiekt tej klasy i odpalić w nim tę metodę)
-parseJsonData(HttpUtils.makeHttpRequest(Confing.URL_ID + city + "&key=" + Confing.API_ID));
+parseJsonData(HttpUtils.makeHttpRequest(Confing.URL_ID + choosen +"+in+"+ city + "&key=" + Confing.API_ID));
 
     }
 
